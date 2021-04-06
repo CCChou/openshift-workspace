@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-test
+data:
+  version.data: "20210416"
+  yaml.config: |
+    name: dennis
+    image: dennischou/netutils
+  json.data: |
+    {
+      "key": {
+          "storage": "yes"
+      }
+    }

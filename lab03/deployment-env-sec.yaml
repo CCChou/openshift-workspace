@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-test-env
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-test-env
+  template:
+    metadata:
+      labels:
+        app: config-test-env
+    spec:
+      containers:
+      - name: myapp-config-env
+        image: docker.io/dennischou/readconfig
+        env:
+        - name: VERSION    
+          valueFrom:
+            configMapKeyRef:
+              name: config-test
+              key: version.data

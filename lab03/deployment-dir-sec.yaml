@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-test-dir
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: config-test-dir
+  template:
+    metadata:
+      labels:
+        app: config-test-dir
+    spec:
+      containers:
+      - name: config-test-cir
+        image: docker.io/dennischou/readconfig
+        volumeMounts:
+        - name: config-volume
+          mountPath: /tmp/data
+      volumes:
+      - name: config-volume
+        configMap:
+          name: config-test
