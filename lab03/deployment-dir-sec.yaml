@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config-test-dir
+  name: secret-test-dir
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config-test-dir
+      app: secret-test-dir
   template:
     metadata:
       labels:
-        app: config-test-dir
+        app: secret-test-dir
     spec:
       containers:
-      - name: config-test-cir
+      - name: secret-test-dir
         image: docker.io/dennischou/readconfig
         volumeMounts:
-        - name: config-volume
+        - name: secret-volume
           mountPath: /tmp/data
       volumes:
-      - name: config-volume
-        configMap:
-          name: config-test
+      - name: secret-volume
+        secret:
+          secretName: secret-test

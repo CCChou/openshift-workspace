@@ -13,7 +13,7 @@ spec:
         app: config-test-env
     spec:
       containers:
-      - name: myapp-config-env
+      - name: config-test-env
         image: docker.io/dennischou/readconfig
         env:
         - name: VERSION    

@@ -1,23 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config-test-env
+  name: secret-test-env
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: config-test-env
+      app: secret-test-env
   template:
     metadata:
       labels:
-        app: config-test-env
+        app: secret-test-env
     spec:
       containers:
-      - name: myapp-config-env
+      - name: secret-test-env
         image: docker.io/dennischou/readconfig
         env:
         - name: VERSION    
           valueFrom:
-            configMapKeyRef:
-              name: config-test
+            secretKeyRef:
+              name: secret-test
               key: version.data
+        - name: VERSION_NEW
+          valueFrom:
+            secretKeyRef:
+              name: secret-test
+              key: version.data.new
