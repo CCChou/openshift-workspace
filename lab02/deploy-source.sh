@@ -1,2 +1,2 @@
 #!/bin/bash
-oc new-app https://github.com/CCChou/OrderTest.git
+oc new-app java:openjdk-8-el7~https://github.com/CCChou/OrderTest.git

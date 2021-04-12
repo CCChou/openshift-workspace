@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-pv
+  name: test-sc
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test-pv
+      app: test-sc
   template:
     metadata:
-      name: test-pv
+      name: test-sc
       labels:
-        app: test-pv
+        app: test-sc
     spec:
       containers:
       - image: docker.io/dennischou/txtfileserver:v2
         imagePullPolicy: Always
-        name: test-pv
+        name: test-sc
         volumeMounts:
         - mountPath: /opt/demo/files
           name: data-pvc
       volumes:
       - name: data-pvc
         persistentVolumeClaim:
-          claimName: pvc-nfs
+          claimName: pvc-nfs-sc
