@@ -14,11 +14,11 @@ spec:
         app: test-pv
     spec:
       containers:
-      - image: docker.io/dennischou/txtfileserver:v2
+      - image: docker.io/dennischou/test-server:v1.0.0
         imagePullPolicy: Always
         name: test-pv
         volumeMounts:
-        - mountPath: /opt/demo/files
+        - mountPath: /workspace/files
           name: data-pvc
       volumes:
       - name: data-pvc

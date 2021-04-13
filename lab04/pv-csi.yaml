@@ -17,4 +17,4 @@ spec:
     volumeHandle: unique-volumeid  # make sure it's a unique id in the cluster
     volumeAttributes:
       server: 10.9.44.11
-      share: /nfs
+      share: /nfs/files

@@ -13,4 +13,4 @@ spec:
   #   name: pvc-nfs
   nfs:
     server: 10.9.44.11
-    path: /nfs
+    path: /nfs/files
