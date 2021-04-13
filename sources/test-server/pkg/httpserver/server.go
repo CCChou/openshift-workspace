@@ -14,6 +14,9 @@ import (
 	"time"
 )
 
+const CONFIG_PATH = "configs"
+const VERSION = "v1.0.0"
+
 func Serve() {
 	http.HandleFunc("/text", text)
 	http.HandleFunc("/config", config)
@@ -43,7 +46,7 @@ func getFileName() string {
 func config(w http.ResponseWriter, r *http.Request) {
 	files := getFiles()
 	for _, file := range files {
-		if strings.HasPrefix(file, "/tmp/data/.") {
+		if strings.HasPrefix(file, CONFIG_PATH + "/.") {
 			continue
 		}
 
@@ -57,7 +60,7 @@ func config(w http.ResponseWriter, r *http.Request) {
 
 func getFiles() []string {
 	var files []string
-	root := "/tmp/data"
+	root := CONFIG_PATH
 	err := filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
 		files = append(files, path)
 		return nil
@@ -97,5 +100,5 @@ func showip(w http.ResponseWriter, r *http.Request) {
 }
 
 func version(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "VERSION: v1.0.0")
+	fmt.Fprintf(w, "VERSION: " + VERSION)
 }
