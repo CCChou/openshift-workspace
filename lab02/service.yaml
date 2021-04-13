@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: showip
+  name: test-server
   labels:
-    app: showip
+    app: test-server
 spec:
   type: ClusterIP
   ports:
-  - port: 8080
+  - port: 9090
     protocol: TCP
-    targetPort: 8080
+    targetPort: 9090
   selector:
-    app: showip
+    app: test-server

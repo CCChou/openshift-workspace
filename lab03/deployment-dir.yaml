@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: config-test-cir
-        image: docker.io/dennischou/readconfig
+        image: docker.io/dennischou/test-server
         volumeMounts:
         - name: config-volume
           mountPath: /tmp/data

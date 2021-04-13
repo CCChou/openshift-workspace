@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: showip
+  name: test-server
   labels:
-    app: showip
+    app: test-server
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: showip
+      app: test-server
   template:
     metadata:
       labels:
-        app: showip
+        app: test-server
     spec:
       containers:
-      - name: showip
-        image: docker.io/dennischou/showip:v1
+      - name: test-server
+        image: docker.io/dennischou/test-server:v1.0.0

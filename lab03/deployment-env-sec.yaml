@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: secret-test-env
-        image: docker.io/dennischou/readconfig
+        image: docker.io/dennischou/test-server
         env:
         - name: VERSION    
           valueFrom:

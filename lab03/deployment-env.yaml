@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: config-test-env
-        image: docker.io/dennischou/readconfig
+        image: docker.io/dennischou/test-server
         env:
         - name: VERSION    
           valueFrom:
