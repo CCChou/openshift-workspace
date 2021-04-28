@@ -1,0 +1,1 @@
+curl -o /dev/null -s -w "%{http_code}\n" -H "Cookie: cd10b69e39387eb7ec9ac241201ab1ab=3118e70d2dc733ffd5dd0d1837d9adfc; session=eyJ1c2VyIjoiZGVubmlzIn0.YIkjFA.Oee4WCoEBSR7Roi565aQKQv67s4" http://istio-ingressgateway-istio-system.apps.cpi.ibm.lab/productpage
