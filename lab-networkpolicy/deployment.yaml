@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: netutils
+  labels:
+    app: netutils
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: netutils
+  template:
+    metadata:
+      labels:
+        app: netutils
+    spec:
+      containers:
+      - name: netutils
+        image: docker.io/dennischou/netutils:latest

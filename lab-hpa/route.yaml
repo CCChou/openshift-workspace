@@ -1,0 +1,12 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: test-server
+spec:
+  path: /
+  to:
+    kind: Service
+    name: test-server
+  port:
+    targetPort: 9090
+
