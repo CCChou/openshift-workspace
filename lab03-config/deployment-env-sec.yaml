@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: secret-test-env
-        image: docker.io/dennischou/test-server
+        image: docker.io/dennischou/test-server:v1.1.2
         env:
         - name: VERSION    
           valueFrom:

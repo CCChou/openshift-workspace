@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: config-test-cir
-        image: docker.io/dennischou/test-server
+        image: docker.io/dennischou/test-server:v1.1.2
         volumeMounts:
         - name: config-volume
           mountPath: /tmp/data

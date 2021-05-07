@@ -14,7 +14,7 @@ spec:
         app: test-pv
     spec:
       containers:
-      - image: docker.io/dennischou/test-server:v1.0.0
+      - image: docker.io/dennischou/test-server:v1.1.2
         imagePullPolicy: Always
         name: test-pv
         volumeMounts:
